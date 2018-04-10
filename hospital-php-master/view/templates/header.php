@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Studenten app</title>	
-	<link rel="stylesheet" href="<?= URL ?>">
+	<meta charset="UTF-8">
+	<title>Hospital</title>
+	<link rel="stylesheet" href="<?= URL ?>css/style.css" type="text/css">
+	<script type="text/javascript" src="<?= URL ?>public/js/jquery-latest.js"></script> 
+	<script type="text/javascript" src="<?= URL ?>public/js/jquery.tablesorter.js"></script>
 </head>
 <body>
-	<nav>
+	<h1>Hospital</h1>
 	<ul>
-		<li><a href="<?= URL ?>home/index">Home</a></li>
-		<li><a href="<?= URL ?>students/index">Students</a></li>
+		<li><a href="<?= URL ?>hospital/patients">Patiënts</a></li>
+		<li><a href="<?= URL ?>hospital/clients">Clients</a></li>
+		<li><a href="<?= URL ?>hospital/species">Species</a></li>
 	</ul>
-	</nav>
