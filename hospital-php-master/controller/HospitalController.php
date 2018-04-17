@@ -3,7 +3,7 @@
 	require(ROOT . "model/HospitalModel.php");
 
 	function index() {
-		render("hospital/index", array(
+		render("patient/index", array(
 			"getPatients" =>getHospital()
 		));
 		
@@ -16,12 +16,12 @@
 	function createAction() {
 		// hier update uitvoeren 
 		// functie aanroepen vanuit model en data als parameter aan modellaag meegeven
-		createBirthday($_POST);
-		header('Location: ' . URL . 'hospital/index');
+		createPatient($_POST);
+		header('Location: ' . URL . 'patient/index');
 	}
 
 	function edit($id) {
-		$edit = getPerson($id);
+		$edit = getPatient($id);
 		// TODO: check if the person exists; if not then exit with errormessage (redirect)
 		if ($edit == null) die('stuk');
 /* 
@@ -41,11 +41,11 @@ array (size=5)
 		// functie aanroepen vanuit model en data als parameter aan modellaag meegeven
 
 		editBirthday($_POST);
-		header('Location: ' . URL . 'hospital/index');
+		header('Location: ' . URL . 'patient/index');
 	}
 
 	function delete($id) {
 		deleteBirthday($id);
-		header('Location: ' . URL . 'hospital/index');
+		header('Location: ' . URL . 'patient/index');
 	}
 ?>

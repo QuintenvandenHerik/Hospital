@@ -2,8 +2,8 @@
 
 	require(ROOT . "model/SpeciesModel.php");
 
-	function species() {
-		render("hospital/species", array(
+	function index() {
+		render("specie/species", array(
 			"getSpecies" =>getSpecies()
 		));
 		
@@ -16,12 +16,12 @@
 	function createAction() {
 		// hier update uitvoeren 
 		// functie aanroepen vanuit model en data als parameter aan modellaag meegeven
-		createBirthday($_POST);
-		header('Location: ' . URL . 'hospital/index');
+		createSpecie($_POST);
+		header('Location: ' . URL . 'specie/index');
 	}
 
 	function edit($id) {
-		$edit = getPerson($id);
+		$edit = getSpecie($id);
 		// TODO: check if the person exists; if not then exit with errormessage (redirect)
 		if ($edit == null) die('stuk');
 /* 
@@ -40,13 +40,13 @@ array (size=5)
 		// hier update uitvoeren 
 		// functie aanroepen vanuit model en data als parameter aan modellaag meegeven
 
-		editBirthday($_POST);
-		header('Location: ' . URL . 'hospital/index');
+		editSpecie($_POST);
+		header('Location: ' . URL . 'specie/index');
 	}
 
 	function delete($id) {
-		deleteBirthday($id);
-		header('Location: ' . URL . 'hospital/index');
+		deleteSpecie($id);
+		header('Location: ' . URL . 'specie/index');
 	}
 
 ?>

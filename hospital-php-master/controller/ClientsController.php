@@ -2,8 +2,8 @@
 
 	require(ROOT . "model/ClientsModel.php");
 
-	function clients() {
-		render("hospital/clients", array(
+	function index() {
+		render("client/clients", array(
 			"getClients" =>getClients()
 		));
 		
@@ -16,12 +16,12 @@
 	function createAction() {
 		// hier update uitvoeren 
 		// functie aanroepen vanuit model en data als parameter aan modellaag meegeven
-		createBirthday($_POST);
-		header('Location: ' . URL . 'hospital/index');
+		createClient($_POST);
+		header('Location: ' . URL . 'client/index');
 	}
 
 	function edit($id) {
-		$edit = getPerson($id);
+		$edit = getClient($id);
 		// TODO: check if the person exists; if not then exit with errormessage (redirect)
 		if ($edit == null) die('stuk');
 /* 
@@ -40,13 +40,13 @@ array (size=5)
 		// hier update uitvoeren 
 		// functie aanroepen vanuit model en data als parameter aan modellaag meegeven
 
-		editBirthday($_POST);
-		header('Location: ' . URL . 'hospital/index');
+		editClient($_POST);
+		header('Location: ' . URL . 'client/index');
 	}
 
 	function delete($id) {
-		deleteBirthday($id);
-		header('Location: ' . URL . 'hospital/index');
+		deleteClient($id);
+		header('Location: ' . URL . 'client/index');
 	}
 
 ?>

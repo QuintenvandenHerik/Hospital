@@ -10,7 +10,7 @@
 <body>
 	<h1>Hospital</h1>
 	<ul>
-		<li><a href="<?= URL ?>hospital/patients">Patiënts</a></li>
-		<li><a href="<?= URL ?>hospital/clients">Clients</a></li>
-		<li><a href="<?= URL ?>hospital/species">Species</a></li>
+		<li><a href="<?= URL ?>patients">Patiënts</a></li>
+		<li><a href="<?= URL ?>clients">Clients</a></li>
+		<li><a href="<?= URL ?>species">Species</a></li>
 	</ul>

@@ -1,4 +1,4 @@
-    <form action="<?= URL ?>kalender/createAction" method="post">
+    <form action="<?= URL ?>client/createAction" method="post">
         <input type="text" name="person" required="" placeholder="name">
         <input type="number" min="1" max="32" required="" name="day" placeholder="day">
         <input type="number" min="1" max="12" required="" name="month" placeholder="month">

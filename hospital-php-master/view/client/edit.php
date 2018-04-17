@@ -1,4 +1,4 @@
-    <form action="<?= URL ?>kalender/editAction" method="post">
+    <form action="<?= URL ?>client/editAction" method="post">
         <input type="text" value="<?php echo $person; ?>" name="person" required="" placeholder="name">
         <input type="number" min="1" max="32" value="<?php echo $day; ?>" name="day" required="" placeholder="day">
         <input type="number" min="1" max="12" value="<?php echo $month; ?>" name="month" required="" placeholder="month">

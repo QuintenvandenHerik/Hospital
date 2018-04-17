@@ -3,6 +3,7 @@
 function route()
 {
 	$url = splitUrl();
+	var_dump($url);
 
 	if (!$url['controller']) {
 		
