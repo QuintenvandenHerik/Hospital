@@ -10,7 +10,7 @@
 	}
 
 	function create() {
-		render("client/create");
+		render("patient/create");
 	}
 
 	function createAction() {
@@ -33,7 +33,7 @@ array (size=5)
   'year' => string '1999' (length=4)
 */
 
-		render("client/edit", $edit);
+		render("patient/edit", $edit);
 	}
 
 	function editAction() {

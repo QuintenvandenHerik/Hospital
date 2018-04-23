@@ -20,3 +20,4 @@
 
         </tbody>
     </table>
+        <p><a href="<?= URL ?>clients/create">Create</a></p>

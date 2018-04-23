@@ -1,4 +1,5 @@
 <?php 
+
     function getHospital() {
         $db = openDatabaseConnection();
         $sql_select_all="SELECT * FROM patients INNER JOIN species ON patients.species_id = species.species_id INNER JOIN clients ON patients.client_id = clients.client_id";

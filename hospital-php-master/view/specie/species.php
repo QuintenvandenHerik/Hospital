@@ -18,3 +18,4 @@
 
         </tbody>
     </table>
+        <p><a href="<?= URL ?>species/create">Create</a></p>

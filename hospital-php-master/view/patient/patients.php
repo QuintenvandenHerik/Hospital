@@ -20,3 +20,4 @@
 
         </tbody>
     </table>
+        <p><a href="<?= URL ?>patients/create">Create</a></p>

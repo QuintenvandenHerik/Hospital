@@ -10,6 +10,7 @@
         return $query->fetchAll();
 
     }
+    
     function createPatient($data) {
         $person = $data['?'];
         $day = $data['?'];
