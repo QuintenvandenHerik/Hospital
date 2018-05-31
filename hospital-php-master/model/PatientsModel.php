@@ -10,27 +10,23 @@
         return $query->fetchAll();
 
     }
-    
+
     function createPatient($data) {
-        $person = $data['?'];
-        $day = $data['?'];
-        $month = $data['?'];
-        $year = $data['?'];
+        $name = $data['name'];
+        $status = $data['status'];
+        $gender = $data['gender'];
+        $specieInfo = $data['species_id'];
+        $clientInfo = $data['client_id'];
         $db = openDatabaseConnection();
-        $sql_add_post = "INSERT INTO patients (?, ?, ?, ?) VALUES ('$?', '$?', '$?', '$?')";
+        $sql_add_post = "INSERT INTO patients (patient_name, patient_status, patient_gender, species_id, client_id) VALUES ('$name', '$status', '$gender', '$specieInfo', '$clientInfo')";
         $query = $db->prepare($sql_add_post);
         $query->execute();
         $db = null;
-
-        // TODO: check if the insert worked.
-        // if yes, then return true
-        // if no, then return false
-        RETURN true;
     }
 
     function getPatient($id) {
         $db = openDatabaseConnection();
-        $sql_select_all="SELECT * FROM patients WHERE id=" . $id . " ORDER BY ?, ?, ?, ?";
+        $sql_select_all="SELECT * FROM patients WHERE patient_id = $id";
         $query = $db->prepare($sql_select_all);
         $query->execute();
         $db = null;
@@ -39,29 +35,24 @@
     }
 
     function editPatient($data) {
-        $id = $data['id'];
-        $person = $data['person'];
-        $day = $data['day'];
-        $month = $data['month'];
-        $year = $data['year'];
+        $patient_id = $data['patient_id'];
+        $client_id = $data['client_id'];
+        $species_id = $data['species_id'];
+        $name = $data['name'];
+        $status = $data['status'];
+        $gender = $data['gender'];
         $db = openDatabaseConnection();
-        $sql_edit_post = "UPDATE patients SET ? = '$?', ? = $?, ? = $?, ? = $? WHERE id = $id";        
+        $sql_edit_post = "UPDATE patients SET patient_name = '$name', patient_status = '$status', patient_gender = '$gender', client_id = '$client_id', species_id = '$species_id' WHERE patient_id = $patient_id";
         $query = $db->prepare($sql_edit_post);
         $query->execute();
         $db = null;
-
-        // TODO: check if the insert worked.
-        // if yes, then return true
-        // if no, then return false
-        RETURN true;
     }
 
     function deletePatient($id) {
         $db = openDatabaseConnection();
-        $sql_delete_id = "DELETE FROM patients WHERE id= $id";
+        $sql_delete_id = "DELETE FROM patients WHERE patient_id= $id";
         $query = $db->prepare($sql_delete_id);
         $query->execute();
         $db = null;
     }
-?>
 ?>

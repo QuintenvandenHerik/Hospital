@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Hospital</title>
-	<link rel="stylesheet" href="<?= URL ?>css/style.css" type="text/css">
+	<link rel="stylesheet" href="<?= URL ?>css/stylesheet.css" type="text/css">
 	<script type="text/javascript" src="<?= URL ?>public/js/jquery-latest.js"></script> 
 	<script type="text/javascript" src="<?= URL ?>public/js/jquery.tablesorter.js"></script>
 </head>

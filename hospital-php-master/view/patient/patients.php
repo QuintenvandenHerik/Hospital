@@ -6,6 +6,7 @@
                 <th>Species</th>
                 <th>Status</th>
                 <th>Client</th>
+                <th>Gender</th>
                 <th colspan="2">Action</th>
             </tr>
         </thead>
@@ -13,8 +14,8 @@
 
             <?php
                 foreach($getPatients as $row) {
-                    printf("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s %s</td><td class='center'><a href='%s%s/%u'>edit</a></td><td class='center'><a href='%s%s/%u'>delete</a></td></tr>", 
-                    $row["patient_name"], $row["species_description"], $row["patient_status"], $row["client_firstname"], $row["client_lastname"], URL, 'edit', $row['patient_id'], URL, 'delete', $row["patient_id"]);
+                    printf("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s %s</td><td>%s</td><td class='center'><a href='%s%s/%u'>edit</a></td><td class='center'><a href='%s%s/%u'>delete</a></td></tr>", 
+                    $row["patient_name"], $row["species_description"], $row["patient_status"], $row["client_firstname"], $row["client_lastname"], $row["patient_gender"], URL, 'patients/edit', $row['patient_id'], URL, 'patients/delete', $row["patient_id"]);
                 }
             ?>
 

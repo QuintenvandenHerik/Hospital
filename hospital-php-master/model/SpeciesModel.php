@@ -10,27 +10,19 @@
         return $query->fetchAll();
 
     }
-    
+
     function createSpecie($data) {
-        $person = $data['?'];
-        $day = $data['?'];
-        $month = $data['?'];
-        $year = $data['?'];
+        $specie = $data['specie'];
         $db = openDatabaseConnection();
-        $sql_add_post = "INSERT INTO patients (?, ?, ?, ?) VALUES ('$?', '$?', '$?', '$?')";
+        $sql_add_post = "INSERT INTO species (species_description) VALUES ('$specie')";
         $query = $db->prepare($sql_add_post);
         $query->execute();
         $db = null;
-
-        // TODO: check if the insert worked.
-        // if yes, then return true
-        // if no, then return false
-        RETURN true;
     }
 
     function getSpecie($id) {
         $db = openDatabaseConnection();
-        $sql_select_all="SELECT * FROM patients WHERE id=" . $id . " ORDER BY ?, ?, ?, ?";
+        $sql_select_all="SELECT * FROM species WHERE species_id = $id";
         $query = $db->prepare($sql_select_all);
         $query->execute();
         $db = null;
@@ -39,29 +31,20 @@
     }
 
     function editSpecie($data) {
-        $id = $data['id'];
-        $person = $data['person'];
-        $day = $data['day'];
-        $month = $data['month'];
-        $year = $data['year'];
+        $id = $data['species_id'];
+        $specie = $data['species_description'];
         $db = openDatabaseConnection();
-        $sql_edit_post = "UPDATE patients SET ? = '$?', ? = $?, ? = $?, ? = $? WHERE id = $id";        
+        $sql_edit_post = "UPDATE species SET species_description = '$specie' WHERE species_id = $id";        
         $query = $db->prepare($sql_edit_post);
         $query->execute();
         $db = null;
-
-        // TODO: check if the insert worked.
-        // if yes, then return true
-        // if no, then return false
-        RETURN true;
     }
 
     function deleteSpecie($id) {
         $db = openDatabaseConnection();
-        $sql_delete_id = "DELETE FROM patients WHERE id= $id";
+        $sql_delete_id = "DELETE FROM species WHERE species_id = $id";
         $query = $db->prepare($sql_delete_id);
         $query->execute();
         $db = null;
     }
-?>
 ?>

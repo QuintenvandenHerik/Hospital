@@ -1,39 +1,34 @@
 <?php
 
 	require(ROOT . "model/PatientsModel.php");
+	require(ROOT . "model/ClientsModel.php");
+	require(ROOT . "model/SpeciesModel.php");
 
 	function index() {
 		render("patient/patients", array(
 			"getPatients" =>getPatients()
 		));
-
 	}
 
 	function create() {
-		render("patient/create");
+		$data['species'] = getSpecies();
+		$data['clients'] = getClients();
+
+		render("patient/create", $data);
 	}
 
 	function createAction() {
 		// hier update uitvoeren 
 		// functie aanroepen vanuit model en data als parameter aan modellaag meegeven
 		createPatient($_POST);
-		header('Location: ' . URL . 'patient/index');
+		header('Location: ' . URL . 'patients/index');
 	}
 
 	function edit($id) {
-		$edit = getPatient($id);
-		// TODO: check if the person exists; if not then exit with errormessage (redirect)
-		if ($edit == null) die('stuk');
-/* 
-array (size=5)
-  'id' => string '350' (length=3)
-  'person' => string 'Quinten' (length=7)
-  'day' => string '7' (length=1)
-  'month' => string '12' (length=2)
-  'year' => string '1999' (length=4)
-*/
-
-		render("patient/edit", $edit);
+		$data['species'] = getSpecies();
+		$data['clients'] = getClients();
+		$data['patient'] = getPatient($id);
+		render("patient/edit", $data);
 	}
 
 	function editAction() {
@@ -41,12 +36,12 @@ array (size=5)
 		// functie aanroepen vanuit model en data als parameter aan modellaag meegeven
 
 		editPatient($_POST);
-		header('Location: ' . URL . 'patient/index');
+		header('Location: ' . URL . 'patients/index');
 	}
 
 	function delete($id) {
 		deletePatient($id);
-		header('Location: ' . URL . 'patient/index');
+		header('Location: ' . URL . 'patients/index');
 	}
 
 ?>

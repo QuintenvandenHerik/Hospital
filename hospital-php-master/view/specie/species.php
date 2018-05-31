@@ -12,7 +12,7 @@
             <?php
                 foreach($getSpecies as $row) {
                     printf("<tr><td>%s</td><td>%s</td><td class='center'><a href='%s%s/%u'>edit</a></td><td class='center'><a href='%s%s/%u'>delete</a></td></tr>", 
-                    $row["species_id"], $row["species_description"], URL, 'edit', $row['species_id'], URL, 'delete', $row["species_id"]);
+                    $row["species_id"], $row["species_description"], URL, 'species/edit', $row['species_id'], URL, 'species/delete', $row["species_id"]);
                 }
             ?>
 

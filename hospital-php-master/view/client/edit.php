@@ -1,8 +1,12 @@
-    <form action="<?= URL ?>client/editAction" method="post">
-        <input type="text" value="<?php echo $person; ?>" name="person" required="" placeholder="name">
-        <input type="number" min="1" max="32" value="<?php echo $day; ?>" name="day" required="" placeholder="day">
-        <input type="number" min="1" max="12" value="<?php echo $month; ?>" name="month" required="" placeholder="month">
-        <input type="number" min="1900" max="<?php echo date('Y'); ?>" value="<?php echo $year; ?>" name="year" required="" placeholder="year">
-        <input type="hidden" name="id" value="<?php echo $id; ?>">
-        <input type="submit" name="submit" value="Edit birthday">
+    <form action="<?= URL ?>clients/editAction" method="post">
+    	<label>Fname:</label>
+        <input type="text" min="1" max="50" value="<?php echo $client_firstname; ?>" name="fname" required="" placeholder="firstname">
+        <label>Lname:</label>
+        <input type="text" min="1" max="50" value="<?php echo $client_lastname; ?>" name="lname" required="" placeholder="lastname">
+        <label>Phone:</label>
+        <input type="number" min="600000000" max="699999999" value="0<?php echo $client_phone; ?>" name="phone" required="" placeholder="phone">
+        <label>E-mail:</label>
+        <input type="text" min="1" max="255" value="<?php echo $client_email; ?>" name="email" required="" placeholder="e-mail">
+        <input type="hidden" name="client_id" value="<?php echo $client_id; ?>">
+        <input type="submit" name="submit" value="Edit client">
     </form>

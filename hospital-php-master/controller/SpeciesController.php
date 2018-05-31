@@ -17,7 +17,7 @@
 		// hier update uitvoeren 
 		// functie aanroepen vanuit model en data als parameter aan modellaag meegeven
 		createSpecie($_POST);
-		header('Location: ' . URL . 'specie/index');
+		header('Location: ' . URL . 'species/index');
 	}
 
 	function edit($id) {
@@ -41,12 +41,12 @@ array (size=5)
 		// functie aanroepen vanuit model en data als parameter aan modellaag meegeven
 
 		editSpecie($_POST);
-		header('Location: ' . URL . 'specie/index');
+		header('Location: ' . URL . 'species/index');
 	}
 
 	function delete($id) {
 		deleteSpecie($id);
-		header('Location: ' . URL . 'specie/index');
+		header('Location: ' . URL . 'species/index');
 	}
 
 ?>
